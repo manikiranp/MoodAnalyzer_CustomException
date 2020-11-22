@@ -5,21 +5,23 @@ package com.moodanalyzer.main;
 	import org.junit.jupiter.api.Test;
 	import org.junit.Assert;
 
-	class MoodAnalyzerTest {
+	public class MoodAnalyzerTest {
 		MoodAnalyzer moodanalyzer = new MoodAnalyzer();
 	
 		@Test
-		void testAnalyzemood_whensad_returnsad() {
+		public void testAnalyzemood_whensad_returnsad() {
 			Assert.assertEquals("sad",moodanalyzer.Analyzemood("I am in Sad Mood"));
 		}
-		
-//		@Test
-//		void analyzemood  
 		
 		@Test
 		void testAnalyzemood_whennotsad_returnhappy() {
 			Assert.assertEquals("happy",moodanalyzer.Analyzemood("I am in Any Mood"));
-		}	
+		}
+		
+		@Test
+		public void analyzemood_whennull_returnhappy() {
+			Assert.assertEquals("happy",moodanalyzer.Analyzemood(null));
+		}
 
 
 	}
