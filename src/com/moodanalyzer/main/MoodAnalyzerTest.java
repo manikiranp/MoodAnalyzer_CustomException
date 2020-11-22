@@ -36,7 +36,15 @@ package com.moodanalyzer.main;
 				e.printStackTrace();
 			}
 		}
+		
+		@Test
+		public void analyzemood_whenempty_throwexception() {
+			try {
+				moodanalyzer.Analyzemood("");
+			} catch (MoodAnalyzerException e) {
+				e.printStackTrace();
+		}
 
-
+		}
 	}
 
