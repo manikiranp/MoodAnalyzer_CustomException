@@ -10,17 +10,31 @@ package com.moodanalyzer.main;
 	
 		@Test
 		public void testAnalyzemood_whensad_returnsad() {
-			Assert.assertEquals("sad",moodanalyzer.Analyzemood("I am in Sad Mood"));
+			try {
+				Assert.assertEquals("sad",moodanalyzer.Analyzemood("I am in Sad Mood"));
+			} catch (MoodAnalyzerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		@Test
 		void testAnalyzemood_whennotsad_returnhappy() {
-			Assert.assertEquals("happy",moodanalyzer.Analyzemood("I am in Any Mood"));
+			try {
+				Assert.assertEquals("happy",moodanalyzer.Analyzemood("I am in Any Mood"));
+			} catch (MoodAnalyzerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		@Test
-		public void analyzemood_whennull_returnhappy() {
-			Assert.assertEquals("happy",moodanalyzer.Analyzemood(null));
+		public void analyzemood_whennull_throwexception() {
+			try {
+				moodanalyzer.Analyzemood(null);
+			} catch (MoodAnalyzerException e) {
+				e.printStackTrace();
+			}
 		}
 
 
